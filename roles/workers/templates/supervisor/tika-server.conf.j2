@@ -1,0 +1,4 @@
+
+[program:tika-server]
+command=java -jar {{ tika_path }}/{{ tika_jar }}
+autostart={{ supervisor_autostart }}
