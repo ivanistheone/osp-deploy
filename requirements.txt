@@ -2,4 +2,4 @@
 boto
 six
 
--e git+https://github.com/ansible/ansible.git#egg=ansible
+-e git+https://github.com/ansible/ansible.git@stable-2.0#egg=ansible
