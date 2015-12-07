@@ -75,10 +75,15 @@ Vagrant.configure(2) do |config|
 
   config.ssh.forward_agent = true
 
-  # 4 gigs of ram.
   config.vm.provider 'virtualbox' do |v|
+
+    # 4 gigs of ram, 4 cores.
     v.cpus = 4
     v.memory = 4096
+
+    # Forward DNS to host resolver (for boto).
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+
   end
 
   # Forward 80 -> 8000.
