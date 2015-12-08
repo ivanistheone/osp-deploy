@@ -10,6 +10,10 @@ hlom:
 tika:
   server: http://localhost:9998/tika
 
+ec2:
+  region: {{ ec2_region }}
+  namespace: {{ ec2_namespace }}
+
 postgres:
 
   default:
@@ -34,6 +38,3 @@ redis:
 elasticsearch:
   host: localhost
   port: 9200
-
-mapquest:
-  api_key: {{ osp_mapquest_key }}
