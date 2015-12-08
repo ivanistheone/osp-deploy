@@ -27,3 +27,8 @@
     dest: /home/{{ ansible_ssh_user }}/.profile
     line: '{{ item }}'
   with_items: osp_profile
+
+- name: Apply the boto credentials
+  template:
+    src: boto.j2
+    dest: /home/{{ ansible_ssh_user }}/.boto

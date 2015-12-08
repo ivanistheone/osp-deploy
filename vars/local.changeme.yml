@@ -25,5 +25,9 @@ ec2_namespace: XXX
 # IP address of the central data server.
 osp_data_host: XXX
 
+# AWS credentials (for boto).
+aws_access_key_id: XXX
+aws_secret_access_key: XXX
+
 # Other local overrides:
 # ...
