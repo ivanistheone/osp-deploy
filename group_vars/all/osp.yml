@@ -15,4 +15,5 @@ osp_profile:
 osp_db_modules:
   - corpus
   - fields
+  - citations
   - inst
