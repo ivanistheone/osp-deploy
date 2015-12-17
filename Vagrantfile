@@ -86,9 +86,10 @@ Vagrant.configure(2) do |config|
 
   end
 
-  # Forward 80 -> 8000.
+  # Forward http and Elasticsearch.
   config.vm.define 'server' do |box|
     box.vm.network 'forwarded_port', guest: 80, host: 8000
+    box.vm.network 'forwarded_port', guest: 9200, host: 9200
   end
 
   config.vm.provision :vai do |ansible|
