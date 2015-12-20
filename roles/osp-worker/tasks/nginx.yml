@@ -1,8 +1,13 @@
 ---
 
-- name: Apply nginx configurations
+- name: Push the nginx configuration
   template:
-    src: nginx/{{ item }}.j2
-    dest: /etc/nginx/sites-enabled/{{ item }}
-  with_items:
-    - osp-api
+    src: nginx/osp-api.j2
+    dest: /etc/nginx/sites-available/osp-api
+
+- name: Enable the Nginx configuration
+  become: yes
+  file:
+    src: /etc/nginx/sites-available/osp-api
+    dest: /etc/nginx/sites-enabled/osp-api
+    state: link
