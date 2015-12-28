@@ -1,6 +1,6 @@
 ---
 
-- name: Deploy the OSP code
+- name: Deploy a worker set
   become: yes
 
   hosts:

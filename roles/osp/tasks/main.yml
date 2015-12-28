@@ -9,3 +9,5 @@
 - include: config_es_test.yml
 
 - include: install_tika.yml
+
+- include: config_supervisor.yml

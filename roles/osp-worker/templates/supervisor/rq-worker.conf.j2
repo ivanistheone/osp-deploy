@@ -1,5 +1,6 @@
 
-[program:osp-workers]
+[program:rq-worker]
 command={{ osp_src }}/env/bin/rqworker
 process_name=%(program_name)s_%(process_num)02d
 numprocs={{ osp_numprocs }}
+autostart=false
