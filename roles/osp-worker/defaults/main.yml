@@ -1,3 +1,8 @@
 ---
 
+osp_worker_procs:
+  - tika-server
+  - 'rq-worker:'
+  - osp-api
+
 uwsgi_config: /etc/uwsgi

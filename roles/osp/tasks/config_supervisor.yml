@@ -8,5 +8,5 @@
     - tika-server
     - es-test
 
-- name: Reload Supervisor programs
-  shell: supervisorctl reload
+- name: Reread Supervisor programs
+  shell: supervisorctl reread
