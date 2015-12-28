@@ -7,3 +7,6 @@
   with_items:
     - tika-server
     - es-test
+
+- name: Reload supervisor
+  shell: supervisorctl reload

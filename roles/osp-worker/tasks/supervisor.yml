@@ -7,3 +7,6 @@
   with_items:
     - rq-worker
     - osp-api
+
+- name: Reload supervisor
+  shell: supervisorctl reload

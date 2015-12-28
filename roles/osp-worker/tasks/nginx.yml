@@ -11,3 +11,8 @@
     src: /etc/nginx/sites-available/osp-api
     dest: /etc/nginx/sites-enabled/osp-api
     state: link
+
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted
