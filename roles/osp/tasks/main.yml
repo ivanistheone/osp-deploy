@@ -2,6 +2,10 @@
 
 - include: install_packages.yml
 
-- include: configure_env.yml
+- include: config_env.yml
 
 - include: deploy_code.yml
+
+- include: config_es_test.yml
+
+- include: install_tika.yml

@@ -16,7 +16,7 @@
 
 - name: Apply the OSP configs
   template:
-    src: '{{ item }}.yml.j2'
+    src: osp/{{ item }}.yml.j2
     dest: /etc/osp/{{ item }}.yml
   with_items:
     - osp
@@ -30,5 +30,5 @@
 
 - name: Apply the boto credentials
   template:
-    src: boto.j2
+    src: osp/boto.j2
     dest: /home/{{ ansible_ssh_user }}/.boto

@@ -17,3 +17,7 @@ osp_db_modules:
   - fields
   - citations
   - inst
+
+osp_tika_url: http://apache.arvixe.com/tika/tika-server-1.11.jar
+osp_tika_path: /etc/tika
+osp_tika_jar: tika-server-1.11.jar
