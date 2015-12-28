@@ -86,7 +86,7 @@ Vagrant.configure(2) do |config|
 
   end
 
-  # Forward http and Elasticsearch.
+  # Forward 80 and Elasticsearch.
   config.vm.define 'server' do |box|
     box.vm.network 'forwarded_port', guest: 80, host: 8000
     box.vm.network 'forwarded_port', guest: 9200, host: 9200

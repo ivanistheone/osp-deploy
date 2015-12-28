@@ -1,0 +1,19 @@
+---
+
+- name: Push Supervisor configurations
+  template:
+    src: supervisor/{{ item }}.conf.j2
+    dest: /etc/supervisor/conf.d/{{ item }}.conf
+  with_items:
+    - osp-web
+
+- name: Reset Supervisor
+  shell:
+     supervisorctl reread && \
+     supervisorctl stop all
+
+- name: Start Supervisor programs
+  supervisorctl:
+    name: '{{ item }}'
+    state: restarted
+  with_items: osp_web_procs

@@ -1,0 +1,6 @@
+---
+
+osp_web_procs:
+  - osp-web
+
+uwsgi_config: /etc/uwsgi

@@ -2,13 +2,13 @@
 
 - name: Push the nginx configuration
   template:
-    src: nginx/osp-api.j2
-    dest: /etc/nginx/sites-available/osp-api
+    src: nginx/osp-web.j2
+    dest: /etc/nginx/sites-available/osp-web
 
 - name: Enable the Nginx configuration
   become: yes
   file:
-    src: /etc/nginx/sites-available/osp-api
+    src: /etc/nginx/sites-available/osp-web
     dest: /etc/nginx/sites-enabled/default
     state: link
 

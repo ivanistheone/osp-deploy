@@ -1,0 +1,15 @@
+---
+
+- name: Deploy a worker set
+  become: yes
+
+  hosts:
+    # TODO: tag_osp_web
+    - tag_osp_server:&tag_user_{{ ec2_namespace }}
+
+  vars_files:
+    - vars/local.yml
+
+  roles:
+    - osp
+    - osp-web
