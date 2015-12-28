@@ -5,7 +5,7 @@
     path: '{{ uwsgi_config }}'
     state: directory
 
-- name: Apply uWSGI configurations
+- name: Push uWSGI configurations
   template:
     src: uwsgi/{{ item }}.ini.j2
     dest: '{{ uwsgi_config }}/{{ item }}.ini'
