@@ -1,5 +1,7 @@
 ---
 
-- include: install_deps.yml
+- include: install_packages.yml
+
 - include: configure_env.yml
+
 - include: deploy_code.yml
