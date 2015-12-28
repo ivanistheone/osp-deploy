@@ -8,5 +8,5 @@
     - rq-worker
     - osp-api
 
-- name: Reload supervisor
+- name: Reload Supervisor programs
   shell: supervisorctl reload
