@@ -1,7 +1,3 @@
 ---
 
-tika_url: http://apache.arvixe.com/tika/tika-server-1.11.jar
-tika_path: /etc/tika
-tika_jar: tika-server-1.11.jar
-
 uwsgi_config: /etc/uwsgi
