@@ -5,13 +5,14 @@
     src: supervisor/{{ item }}.conf.j2
     dest: /etc/supervisor/conf.d/{{ item }}.conf
   with_items:
-    - osp-web-uwsgi
-    - osp-web-dev
+    - osp-www-uwsgi
+    - osp-www-dev
 
-- name: Reset Supervisor
-  shell:
-     supervisorctl reread && \
-     supervisorctl stop all
+- name: Reload Supervisor
+  shell: supervisorctl reload
+
+- name: Wait for Supervisor
+  pause: seconds=3
 
 - name: Start Supervisor programs
   supervisorctl:

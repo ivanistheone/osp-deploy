@@ -8,10 +8,11 @@
     - rq-worker
     - osp-worker
 
-- name: Reset Supervisor
-  shell:
-     supervisorctl reread && \
-     supervisorctl stop all
+- name: Reload Supervisor
+  shell: supervisorctl reload
+
+- name: Wait for Supervisor
+  pause: seconds=3
 
 - name: Start Supervisor programs
   supervisorctl:

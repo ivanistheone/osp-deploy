@@ -1,6 +1,6 @@
 ---
 
-- name: Deploy a worker set
+- name: Deploy the web app
   become: yes
 
   hosts:
@@ -11,4 +11,4 @@
 
   roles:
     - osp
-    - osp-web
+    - osp-www

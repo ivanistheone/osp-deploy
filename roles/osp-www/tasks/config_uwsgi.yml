@@ -10,4 +10,4 @@
     src: uwsgi/{{ item }}.ini.j2
     dest: '{{ uwsgi_config }}/{{ item }}.ini'
   with_items:
-    - osp-web
+    - osp-www
