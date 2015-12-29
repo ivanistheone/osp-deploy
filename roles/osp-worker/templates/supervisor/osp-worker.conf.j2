@@ -1,0 +1,4 @@
+
+[program:osp-worker]
+command={{ osp_src }}/env/bin/uwsgi --ini {{ uwsgi_config }}/osp-worker.ini
+autostart=false

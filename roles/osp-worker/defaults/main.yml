@@ -2,7 +2,7 @@
 
 osp_worker_procs:
   - tika-server
+  - osp-worker
   - 'rq-worker:'
-  - osp-api
 
 uwsgi_config: /etc/uwsgi

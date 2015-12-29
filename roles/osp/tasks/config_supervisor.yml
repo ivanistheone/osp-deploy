@@ -1,6 +1,9 @@
 ---
 
-- name: Push Supervisor configurations
+- name: Reset Supervisor configs
+  shell: rm /etc/supervisor/conf.d/*.conf
+
+- name: Push Supervisor configs
   template:
     src: supervisor/{{ item }}.conf.j2
     dest: /etc/supervisor/conf.d/{{ item }}.conf
@@ -8,5 +11,5 @@
     - tika-server
     - es-test
 
-- name: Reread Supervisor programs
-  shell: supervisorctl reread
+- name: Reload Supervisor
+  shell: supervisorctl reload

@@ -6,7 +6,7 @@
     dest: /etc/supervisor/conf.d/{{ item }}.conf
   with_items:
     - rq-worker
-    - osp-api
+    - osp-worker
 
 - name: Reset Supervisor
   shell:
