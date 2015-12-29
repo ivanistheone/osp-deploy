@@ -5,7 +5,7 @@
     src: supervisor/{{ item }}.conf.j2
     dest: /etc/supervisor/conf.d/{{ item }}.conf
   with_items:
-    - osp-www-uwsgi
+    - osp-www-prod
     - osp-www-dev
 
 - name: Reload Supervisor

@@ -1,6 +1,6 @@
 ---
 
 osp_web_procs:
-  - osp-www-uwsgi
+  - osp-www-prod
 
 uwsgi_config: /etc/uwsgi
