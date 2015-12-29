@@ -18,4 +18,4 @@
   supervisorctl:
     name: '{{ item }}'
     state: restarted
-  with_items: osp_web_procs
+  with_items: osp_www_procs

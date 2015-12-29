@@ -1,0 +1,23 @@
+---
+
+- name: Add Nodesource apt key
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+
+- name: Add Nodesource repo
+  apt_repository:
+    repo: deb https://deb.nodesource.com/node_5.x trusty main
+    state: present
+
+- name: Install Node.js
+  apt:
+    pkg: nodejs
+    state: latest
+
+- name: Install global npm modules
+  npm:
+    name: '{{ item }}'
+    global: yes
+  with_items:
+    - grunt-cli

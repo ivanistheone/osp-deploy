@@ -1,6 +1,8 @@
 ---
 
-osp_web_procs:
+osp_www_src: '{{ osp_src }}/osp/www'
+
+osp_www_procs:
   - osp-www-prod
 
 uwsgi_config: /etc/uwsgi
