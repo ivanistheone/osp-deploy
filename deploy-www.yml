@@ -10,5 +10,5 @@
     - vars/local.yml
 
   roles:
-    #- osp
+    - osp
     - osp-www
