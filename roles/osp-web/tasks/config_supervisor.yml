@@ -4,7 +4,9 @@
   template:
     src: supervisor/{{ item }}.conf.j2
     dest: /etc/supervisor/conf.d/{{ item }}.conf
-  with_items: osp_web_procs
+  with_items:
+    - osp-web-uwsgi
+    - osp-web-dev
 
 - name: Reset Supervisor
   shell:

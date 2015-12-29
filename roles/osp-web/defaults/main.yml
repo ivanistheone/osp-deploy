@@ -2,6 +2,5 @@
 
 osp_web_procs:
   - osp-web-uwsgi
-  - osp-web-dev
 
 uwsgi_config: /etc/uwsgi
