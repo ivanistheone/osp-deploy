@@ -6,7 +6,7 @@ es_group: elasticsearch
 es_url: https://download.elasticsearch.org/elasticsearch/elasticsearch
 es_version: 1.7.4
 
-es_heap_size: 512m
+es_heap_size: 15g
 
 es_prod_data_dir: /var/lib/elasticsearch/prod
 es_test_data_dir: /var/lib/elasticsearch/test

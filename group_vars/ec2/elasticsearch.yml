@@ -1,3 +1,3 @@
 ---
 
-es_data_dir: /osp/data/elasticsearch
+es_prod_data_dir: /osp/data/elasticsearch
