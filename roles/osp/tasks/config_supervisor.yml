@@ -2,6 +2,7 @@
 
 - name: Reset Supervisor configs
   shell: rm /etc/supervisor/conf.d/*.conf
+  ignore_errors: yes
 
 - name: Push Supervisor configs
   template:

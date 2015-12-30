@@ -1,6 +1,6 @@
 ---
 
-- name: Push the nginx configuration
+- name: Push the Nginx configuration
   template:
     src: nginx/osp-worker.j2
     dest: /etc/nginx/sites-available/osp-worker
@@ -12,7 +12,7 @@
     dest: /etc/nginx/sites-enabled/default
     state: link
 
-- name: Restart nginx
+- name: Restart Nginx
   service:
     name: nginx
     state: restarted
