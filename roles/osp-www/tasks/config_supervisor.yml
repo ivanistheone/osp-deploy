@@ -8,8 +8,10 @@
     - osp-www-prod
     - osp-www-dev
 
-- name: Reload Supervisor
-  shell: supervisorctl reload
+- name: Restart Supervisor
+  service:
+    name: supervisor
+    state: restarted
 
 - name: Wait for Supervisor
   pause: seconds=3
