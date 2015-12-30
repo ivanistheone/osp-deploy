@@ -4,7 +4,9 @@ es_user: elasticsearch
 es_group: elasticsearch
 
 es_url: https://download.elasticsearch.org/elasticsearch/elasticsearch
-es_version: 2.1.1
+es_version: 1.7.4
 
-es_data_dir: /var/lib/elasticsearch/data
 es_heap_size: 512m
+
+es_prod_data_dir: /var/lib/elasticsearch/prod
+es_test_data_dir: /var/lib/elasticsearch/test

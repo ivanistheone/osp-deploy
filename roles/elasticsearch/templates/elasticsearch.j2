@@ -32,10 +32,6 @@ ES_HEAP_SIZE={{ es_heap_size }}
 # Elasticsearch data directory
 #DATA_DIR=/var/lib/elasticsearch
 
-{% if es_data_dir is defined %}
-DATA_DIR={{ es_data_dir }}
-{% endif %}
-
 # Elasticsearch work directory
 #WORK_DIR=/tmp/elasticsearch
 

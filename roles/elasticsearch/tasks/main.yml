@@ -25,20 +25,47 @@
 - name: Install the package
   shell: dpkg -i /tmp/elasticsearch-{{ es_version }}.deb
 
-- name: Set permissions on the data directory
-  file:
-    state: directory
-    path: '{{ es_data_dir }}'
-    owner: '{{ es_user }}'
-    group: '{{ es_group }}'
-    mode: 0700
-    recurse: yes
-
-- name: Apply the configuration
+- name: Push the global config
   template:
     src: elasticsearch.j2
     dest: /etc/default/elasticsearch
     mode: 0644
+
+- name: Create testing config directory
+  shell: cp -r /etc/elasticsearch /etc/elasticsearch-test
+
+- name: Push the prod config
+  template:
+    src: es-prod.yml.j2
+    dest: /etc/elasticsearch/elasticsearch.yml
+
+- name: Push the test config
+  template:
+    src: es-test.yml.j2
+    dest: /etc/elasticsearch-test/elasticsearch.yml
+
+- name: Set permissions on data dirs
+  file:
+    state: directory
+    path: '{{ item }}'
+    owner: '{{ es_user }}'
+    group: '{{ es_group }}'
+    mode: 0700
+    recurse: yes
+  with_items:
+    - '{{ es_prod_data_dir }}'
+    - '{{ es_test_data_dir }}'
+
+- name: Set permissions on conf dirs
+  file:
+    state: directory
+    path: '{{ item }}'
+    owner: '{{ es_user }}'
+    group: '{{ es_group }}'
+    recurse: yes
+  with_items:
+    - /etc/elasticsearch
+    - /etc/elasticsearch-test
 
 - name: Restart Elasticsearch
   service:
