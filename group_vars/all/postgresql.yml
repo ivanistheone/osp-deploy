@@ -1,6 +1,6 @@
 ---
 
-postgresql_version: 9.4
+postgresql_version: 9.5
 postgresql_ext_install_contrib: yes
 postgresql_max_connections: 500
 postgresql_client_encoding: utf8
