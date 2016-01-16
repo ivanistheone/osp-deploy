@@ -1,0 +1,20 @@
+---
+
+- name: Push the global config
+  template:
+    src: elasticsearch.j2
+    dest: /etc/default/elasticsearch
+    mode: 0644
+
+- name: Create testing config directory
+  shell: cp -r /etc/elasticsearch /etc/elasticsearch-test
+
+- name: Push the prod config
+  template:
+    src: es-prod.yml.j2
+    dest: /etc/elasticsearch/elasticsearch.yml
+
+- name: Push the test config
+  template:
+    src: es-test.yml.j2
+    dest: /etc/elasticsearch-test/elasticsearch.yml
