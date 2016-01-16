@@ -11,6 +11,7 @@
   with_items:
     - '{{ es_prod_data_dir }}'
     - '{{ es_test_data_dir }}'
+    - '{{ es_ssd_data_dir }}'
 
 - name: Set permissions on conf dirs
   file:
