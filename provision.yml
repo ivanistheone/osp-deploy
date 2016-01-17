@@ -70,6 +70,8 @@
         instance: '{{ item.id }}'
         snapshot: '{{ ec2_osp_snapshot }}'
         region: '{{ ec2_region }}'
+        volume_type: '{{ ec2_volume_type }}'
+        iops: '{{ ec2_iops }}'
 
       with_flattened:
         - workers.instances
