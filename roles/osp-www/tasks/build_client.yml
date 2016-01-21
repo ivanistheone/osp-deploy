@@ -3,14 +3,17 @@
 - name: NPM install
   command: npm install
   args:
-    chdir: "{{ osp_www_src }}"
+    chdir: '{{ osp_www_src }}'
+
+# TODO: Why isn't ansible_ssh_user available?
 
 - name: Bower install
   command: bower install
+  become_user: ubuntu
   args:
-    chdir: "{{ osp_www_src }}"
+    chdir: '{{ osp_www_src }}'
 
 - name: Build the application
   command: grunt compile:min
   args:
-    chdir: "{{ osp_www_src }}"
+    chdir: '{{ osp_www_src }}'
