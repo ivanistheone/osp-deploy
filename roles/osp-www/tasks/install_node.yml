@@ -21,3 +21,4 @@
     global: yes
   with_items:
     - grunt-cli
+    - bower

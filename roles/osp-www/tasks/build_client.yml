@@ -5,6 +5,11 @@
   args:
     chdir: "{{ osp_www_src }}"
 
+- name: Bower install
+  command: bower install
+  args:
+    chdir: "{{ osp_www_src }}"
+
 - name: Build the application
   command: grunt compile:min
   args:
