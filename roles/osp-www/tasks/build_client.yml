@@ -17,3 +17,9 @@
   command: grunt compile:min
   args:
     chdir: '{{ osp_www_src }}'
+
+- name: Symlink the tile pyramid
+  file:
+    src: /osp/tiles
+    dest: '{{ osp_www_src }}/static/dist/tiles'
+    state: link
