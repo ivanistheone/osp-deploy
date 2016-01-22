@@ -1,0 +1,12 @@
+---
+
+- name: Stop Elasticsearch
+  service:
+    name: elasticsearch
+    state: stopped
+
+# TODO: Copy module?
+
+- name: Sync the data dir to SSD
+  command: cp -r {{ es_prod_data_dir }} {{ es_ssd_data_dir }}
+  when: es_prod_data_dir != es_ssd_data_dir

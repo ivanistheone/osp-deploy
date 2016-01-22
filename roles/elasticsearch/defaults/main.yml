@@ -10,3 +10,5 @@ es_heap_size: 512m
 
 es_prod_data_dir: /var/lib/elasticsearch/prod
 es_test_data_dir: /var/lib/elasticsearch/test
+
+es_ssd_data_dir: '{{ es_prod_data_dir }}'
