@@ -1,6 +1,6 @@
 ---
 
-osp_repo: https://github.com/davidmcclure/osp.git
+osp_repo: https://github.com/davidmcclure/open-syllabus-project.git
 osp_branch: master
 osp_src: /home/{{ ansible_ssh_user }}/osp
 osp_numprocs: 4
