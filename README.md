@@ -58,7 +58,7 @@ The slowness of the pip install is a real drag, especially when it comes time to
 
 1. Change down into `/home/vagrant/osp`, and run:
 
-  `pip wheel -r requirements.txt`
+  `pip wheel -r requirements.txt -w wheelhouse`
 
 1. Tar up the wheelhouse:
 
