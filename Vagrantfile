@@ -82,7 +82,7 @@ Vagrant.configure(2) do |config|
     v.memory = 8192
 
     # Forward DNS to host resolver (for boto).
-    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    v.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
 
   end
 
