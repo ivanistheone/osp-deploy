@@ -1,0 +1,10 @@
+
+[program:{{ item.name }}]
+
+command={{ item.command }}
+
+autostart={{ item.autostart | default(false) }}
+
+{% if item.numprocs is defined %}
+numprocs={{ item.numprocs }}
+{% endif %}
