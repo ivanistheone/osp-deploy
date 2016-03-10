@@ -18,7 +18,7 @@ dependencies:
 
     postgresql_users:
       - name: osp
-        pass: '{{ osp_db_password }}'
+        pass: '{{ osp_db_pass }}'
 
     postgresql_user_privileges:
       - name: osp
