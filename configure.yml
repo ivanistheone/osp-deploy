@@ -13,6 +13,5 @@
   roles:
     - common
     - elasticsearch
-    - redis
     - supervisor
     - nginx

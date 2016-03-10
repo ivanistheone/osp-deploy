@@ -3,6 +3,10 @@
 dependencies:
 
 
+  - role: redis
+    tags: redis
+
+
   - role: postgresql
     tags: postgresql
     become: yes
