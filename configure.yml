@@ -12,7 +12,6 @@
 
   roles:
     - common
-    - postgresql
     - elasticsearch
     - redis
     - supervisor
