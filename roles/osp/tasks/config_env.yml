@@ -16,7 +16,7 @@
 
 - name: Push the OSP configs
   template:
-    src: {{ item }}.yml.j2
+    src: '{{ item }}.yml.j2'
     dest: /etc/osp/{{ item }}.yml
   with_items:
     - osp

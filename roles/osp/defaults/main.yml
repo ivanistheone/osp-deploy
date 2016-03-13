@@ -1,0 +1,8 @@
+---
+
+osp_start_es_test: >
+  /usr/share/elasticsearch/bin/elasticsearch
+  --config=/etc/elasticsearch-test/elasticsearch.yml
+
+osp_start_tika_server: >
+  java -jar {{ osp_tika_path }}/{{ osp_tika_jar }}

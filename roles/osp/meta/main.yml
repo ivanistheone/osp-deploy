@@ -57,9 +57,8 @@ dependencies:
     supervisor_programs:
 
       - name: tika-server
-        command: java -jar {{ osp_tika_path }}/{{ osp_tika_jar }}
+        command: '{{ osp_start_tika_server }}'
+        autostart: true
 
       - name: es-test
-        command: >
-          /usr/share/elasticsearch/bin/elasticsearch
-          --config=/etc/elasticsearch-test/elasticsearch.yml
+        command: '{{ osp_start_es_test }}'
