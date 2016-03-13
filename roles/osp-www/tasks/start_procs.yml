@@ -1,0 +1,7 @@
+---
+
+- name: Start Supervisor processes
+  supervisorctl:
+    name: '{{ item }}'
+    state: restarted
+  with_items: osp_www_procs

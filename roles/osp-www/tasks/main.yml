@@ -3,3 +3,5 @@
 - include: install_node.yml
 
 - include: build_client.yml
+
+- include: start_procs.yml
