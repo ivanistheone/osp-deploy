@@ -28,12 +28,10 @@ dependencies:
 
       - name: osp-worker
         command: '{{ osp_worker_start_api }}'
-        autostart: true
 
       - name: rq-worker
         command: '{{ osp_worker_start_rqworker }}'
         numprocs: '{{ osp_numprocs }}'
-        autostart: true
 
 
   - role: nginx

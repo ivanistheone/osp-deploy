@@ -2,7 +2,13 @@
 
 osp_www_src: '{{ osp_src }}/osp/www'
 
+osp_www_start_prod: >
+  {{ osp_src }}/env/bin/uwsgi --ini
+  {{ uwsgi_config }}/osp-www.ini
+
+osp_www_start_dev: >
+  {{ osp_src }}/env/bin/python
+  {{ osp_src }}/osp/www/app.py
+
 osp_www_procs:
   - osp-www-prod
-
-uwsgi_config: /etc/uwsgi

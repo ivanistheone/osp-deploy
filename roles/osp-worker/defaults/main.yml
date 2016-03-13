@@ -6,3 +6,8 @@ osp_worker_start_api: >
 
 osp_worker_start_rqworker: >
   {{ osp_src }}/env/bin/rqworker
+
+osp_worker_procs:
+  - tika-server
+  - osp-worker
+  - 'rq-worker:'

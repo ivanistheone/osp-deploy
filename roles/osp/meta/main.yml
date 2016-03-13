@@ -58,7 +58,6 @@ dependencies:
 
       - name: tika-server
         command: '{{ osp_start_tika_server }}'
-        autostart: true
 
       - name: es-test
         command: '{{ osp_start_es_test }}'

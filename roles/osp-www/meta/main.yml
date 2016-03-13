@@ -27,15 +27,10 @@ dependencies:
     supervisor_programs:
 
       - name: osp-www-prod
-        autostart: true
-        command: >
-          {{ osp_src }}/env/bin/uwsgi --ini
-          {{ uwsgi_config }}/osp-www.ini
+        command: '{{ osp_www_start_prod }}'
 
       - name: osp-www-dev
-        command: >
-          {{ osp_src }}/env/bin/python
-          {{ osp_src }}/osp/www/app.py
+        command: '{{ osp_www_start_dev }}'
 
 
   - role: nginx
