@@ -5,3 +5,17 @@
     pkg: supervisor
     update_cache: yes
     state: latest
+
+- name: Push the program configs
+  template:
+    src: program.conf.j2
+    dest: /etc/supervisor/conf.d/{{ item.name }}.conf
+  with_items: supervisor_programs
+
+- name: Restart Supervisor
+  service:
+    name: supervisor
+    state: restarted
+
+- name: Wait for Supervisor
+  pause: seconds=3

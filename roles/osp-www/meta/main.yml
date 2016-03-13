@@ -21,6 +21,23 @@ dependencies:
         callable: app
 
 
+  - role: supervisor
+    tags: supervisor
+
+    supervisor_programs:
+
+      - name: osp-www-prod
+        autostart: true
+        command: >
+          {{ osp_src }}/env/bin/uwsgi --ini
+          {{ uwsgi_config }}/osp-www.ini
+
+      - name: osp-www-dev
+        command: >
+          {{ osp_src }}/env/bin/python
+          {{ osp_src }}/osp/www/app.py
+
+
   - role: nginx
     tags: nginx
 

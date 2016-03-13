@@ -1,0 +1,8 @@
+
+[program:{{ item.name }}]
+
+command={{ item.command }}
+
+autostart={{ item.autostart | default(false) }}
+
+numprocs={{ item.numprocs | default(1) }}
