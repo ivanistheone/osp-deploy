@@ -1,0 +1,26 @@
+
+[uwsgi]
+
+{% if item.base is defined %}
+base={{ item.base }}
+{% endif %}
+
+{% if item.module is defined %}
+module={{ item.module }}
+{% endif %}
+
+{% if item.home is defined %}
+home={{ item.home }}
+{% endif %}
+
+{% if item.pythonpath is defined %}
+pythonpath={{ item.pythonpath }}
+{% endif %}
+
+{% if item.callable is defined %}
+callable={{ item.callable }}
+{% endif %}
+
+{% if item.socket is defined %}
+socket={{ item.socket }}
+{% endif %}

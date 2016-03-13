@@ -1,0 +1,12 @@
+---
+
+- name: Create the uWSGI config directory
+  file:
+    path: '{{ uwsgi_config }}'
+    state: directory
+
+- name: Push uWSGI configurations
+  template:
+    src: program.ini.j2
+    dest: '{{ uwsgi_config }}/{{ item }}.ini'
+  with_items: uwsgi_programs
