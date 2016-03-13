@@ -3,6 +3,10 @@
 dependencies:
 
 
+  - role: common
+    tags: common
+
+
   - role: redis
     tags: redis
 
