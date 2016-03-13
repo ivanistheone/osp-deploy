@@ -8,5 +8,5 @@
 - name: Push uWSGI configurations
   template:
     src: program.ini.j2
-    dest: '{{ uwsgi_config }}/{{ item }}.ini'
+    dest: '{{ uwsgi_config }}/{{ item.name }}.ini'
   with_items: uwsgi_programs

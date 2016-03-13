@@ -1,7 +1,5 @@
 ---
 
-- include: config_uwsgi.yml
-
 - include: config_supervisor.yml
 
 - include: config_nginx.yml

@@ -2,5 +2,20 @@
 
 dependencies:
 
+
   - role: osp
     tags: osp
+
+
+  - role: uwsgi
+    tags: uwsgi
+
+    uwsgi_programs:
+
+      - name: osp-worker
+        pythonpath: '{{ osp_src }}'
+        base: '{{ osp_src }}'
+        home: '{{ osp_src }}/env'
+        socket: 127.0.0.1:4242
+        module: osp.workers.server
+        callable: app
