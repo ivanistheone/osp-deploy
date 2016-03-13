@@ -19,3 +19,16 @@ dependencies:
         socket: 127.0.0.1:4242
         module: osp.www.app
         callable: app
+
+
+  - role: nginx
+    tags: nginx
+
+    nginx_sites:
+
+      - name: osp-worker
+        site: default
+        uwsgi_pass: 127.0.0.1:4242
+        static:
+          root: '{{ osp_www_src }}'
+          path: static

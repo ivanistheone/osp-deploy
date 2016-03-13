@@ -8,5 +8,18 @@
 
 - name: Remove the default configuration
   file:
-    path: /etc/nginx/sites-enabled/default
+    path: '{{ nginx_sites_enabled }}/default'
     state: absent
+
+- name: Push site configurations
+  template:
+    src: site.j2
+    dest: '{{ nginx_sites_available }}/{{ item.name }}'
+  with_items: nginx_programs
+
+- name: Enable the site configurations
+  file:
+    src: '{{ nginx_sites_available }}/{{ item.name }}'
+    dest: '{{ nginx_sites_enabled }}/{{ item.site }}'
+    state: link
+  with_items: nginx_programs

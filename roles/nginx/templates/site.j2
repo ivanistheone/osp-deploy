@@ -1,0 +1,25 @@
+
+server {
+
+  listen 80;
+  server_name localhost;
+  charset utf-8;
+
+  {% if item.static is defined %}
+
+  location ^~ /{{ item.static.path }}/ {
+    root {{ item.static.root }};
+  }
+
+  {% endif %}
+
+  location / {
+    try_files $uri @osp;
+  }
+
+  location @osp {
+    include uwsgi_params;
+    uwsgi_pass {{ item.uwsgi_pass }};
+  }
+
+}

@@ -19,3 +19,13 @@ dependencies:
         socket: 127.0.0.1:4242
         module: osp.workers.server
         callable: app
+
+
+  - role: nginx
+    tags: nginx
+
+    nginx_sites:
+
+      - name: osp-worker
+        site: default
+        uwsgi_pass: 127.0.0.1:4242
