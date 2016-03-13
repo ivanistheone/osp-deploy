@@ -13,4 +13,3 @@
   roles:
     - common
     - supervisor
-    - nginx
