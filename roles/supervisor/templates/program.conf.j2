@@ -5,4 +5,7 @@ command={{ item.command }}
 
 autostart={{ item.autostart | default(false) }}
 
-numprocs={{ item.numprocs | default(1) }}
+{% if item.numprocs is defined %}
+numprocs={{ item.numprocs }}
+process_name=%(program_name)s_%(process_num)02d
+{% endif %}

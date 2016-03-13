@@ -47,3 +47,19 @@ dependencies:
         address: all
         method: md5
         comment: ''
+
+
+  - role: supervisor
+    tags: supervisor
+
+    supervisor_reset_programs: true
+
+    supervisor_programs:
+
+      - name: tika-server
+        command: java -jar {{ osp_tika_path }}/{{ osp_tika_jar }}
+
+      - name: es-test
+        command: >
+          /usr/share/elasticsearch/bin/elasticsearch
+          --config=/etc/elasticsearch-test/elasticsearch.yml

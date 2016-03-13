@@ -1,3 +1,4 @@
 ---
 
 uwsgi_config: /etc/uwsgi
+uwsgi_programs: []

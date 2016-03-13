@@ -21,6 +21,21 @@ dependencies:
         callable: app
 
 
+  - role: supervisor
+    tags: supervisor
+
+    supervisor_programs:
+
+      - name: osp-worker
+        command: >
+          {{ osp_src }}/env/bin/uwsgi --ini
+          {{ uwsgi_config }}/osp-worker.ini
+
+      - name: rq-worker
+        command: '{{ osp_src }}/env/bin/rqworker'
+        numprocs: '{{ osp_numprocs }}'
+
+
   - role: nginx
     tags: nginx
 

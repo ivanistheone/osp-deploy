@@ -6,6 +6,11 @@
     update_cache: yes
     state: latest
 
+- name: Reset Supervisor configs
+  when: supervisor_reset_programs
+  shell: rm /etc/supervisor/conf.d/*.conf
+  ignore_errors: yes
+
 - name: Push the program configs
   template:
     src: program.conf.j2
