@@ -27,13 +27,13 @@ dependencies:
     supervisor_programs:
 
       - name: osp-worker
-        command: >
-          {{ osp_src }}/env/bin/uwsgi --ini
-          {{ uwsgi_config }}/osp-worker.ini
+        command: '{{ osp_worker_start_api }}'
+        autostart: true
 
       - name: rq-worker
-        command: '{{ osp_src }}/env/bin/rqworker'
+        command: '{{ osp_worker_start_rqworker }}'
         numprocs: '{{ osp_numprocs }}'
+        autostart: true
 
 
   - role: nginx

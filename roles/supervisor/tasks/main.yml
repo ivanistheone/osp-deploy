@@ -17,10 +17,8 @@
     dest: /etc/supervisor/conf.d/{{ item.name }}.conf
   with_items: supervisor_programs
 
-- name: Restart Supervisor
-  service:
-    name: supervisor
-    state: restarted
+- name: Reload programs
+  command: supervisorctl reload
 
 - name: Wait for Supervisor
   pause: seconds=3

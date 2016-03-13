@@ -1,8 +1,8 @@
 ---
 
-osp_worker_procs:
-  - tika-server
-  - osp-worker
-  - 'rq-worker:'
+osp_worker_start_api: >
+  {{ osp_src }}/env/bin/uwsgi --ini
+  {{ uwsgi_config }}/osp-worker.ini
 
-uwsgi_config: /etc/uwsgi
+osp_worker_start_rqworker: >
+  {{ osp_src }}/env/bin/rqworker
