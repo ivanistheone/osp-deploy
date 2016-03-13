@@ -26,7 +26,7 @@ dependencies:
 
     nginx_sites:
 
-      - name: osp-worker
+      - name: osp-www
         site: default
         uwsgi_pass: 127.0.0.1:4242
         static:
