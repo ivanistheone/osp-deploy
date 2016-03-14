@@ -55,7 +55,7 @@ This repository contains a set of Ansible playbooks that automate the process of
 
   This will take 10-20 minutes. Once it's complete, hop into `psql`, and you should be able to interact with the data:
 
-  ```bash
+  ```psql
   > psql osp -U osp
 
   psql (9.5.1)
