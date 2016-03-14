@@ -10,7 +10,7 @@ This repository contains a set of Ansible playbooks that automate the process of
 
   `vagrant plugin install vai`
 
-1. Symlink `config/ansible.vagrant.cfg` -> `ansible.cfg`
+1. Symlink `config/ansible.vagrant.cfg` -> `ansible.cfg`.
 
 1. Copy `/vars/local.changeme.yml` -> `vars/local.yml`.
 
@@ -46,6 +46,25 @@ This repository contains a set of Ansible playbooks that automate the process of
   `py.test`
 
 1. If this passes, the environment is fully configured and ready for work. Any changes to the code made in the synced directory (set by `osp_sync_code`) will be automatically propagated to the VM, and vice versa.
+
+1. At this point, if you're working with one of the public data dumps, just move the dump into the synced `osp_sync_data` directory, and then, from the Vagrant VM, use `pg_restore` to source in the data:
+
+  `pg_restore -d osp -U osp /osp/osp-public.sql -v`
+
+  This will take 10-20 minutes. Once it's complete, hop into `psql`, and you should be able to interact with the data:
+
+  ```
+  > psql osp -U osp
+
+  psql (9.5.1)
+  Type "help" for help.
+
+  osp=> select count(*) from document;
+    count
+  ---------
+   1415005
+  (1 row)
+  ```
 
 #### Make a wheelhouse to speed up deployments
 
