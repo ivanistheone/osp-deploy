@@ -49,11 +49,15 @@ This repository contains a set of Ansible playbooks that automate the process of
 
 1. If this passes, the environment is fully configured and ready for work. Any changes to the code made in the synced directory (set by `osp_sync_code`) will be automatically propagated to the VM, and vice versa.
 
-1. At this point, if you're working with one of the public data dumps, just move the dump into the synced `osp_sync_data` directory, and then, from the Vagrant VM, use `pg_restore` to source in the data:
+1. At this point, if you're working with one of the public data dumps, just move the dump into the synced `osp_sync_data` directory, and then, from the Vagrant VM, reset the database and use `pg_restore` to source in the data:
 
-  `pg_restore /osp/osp-public.sql -d osp -U osp -v`
+  ```
+  dropdb osp -U postgres
+  createdb osp -U postgres
+  pg_restore /osp/osp-public.sql -d osp -U postgres -v
+  ```
 
-  This will take 30-40 minutes. (Ignore any errors here - these are fixed when the foreign key constraints are rebuilt at the end.) Once it's complete, hop into `psql`, and you should be able to interact with the data:
+  This will take 10-20 minutes, since it has to rebuild a couple of pretty large indexes. Once it's complete, hop into `psql`, and you should be able to interact with the data:
 
   ```sql
   > psql osp -U osp
