@@ -18,8 +18,10 @@ This repository contains a set of Ansible playbooks that automate the process of
 
 1. For `osp_sync_code` and `osp_sync_data`, enter paths to directories on the local filesystem that will by synced with the Vagrant VM. Eg, on a Mac, something like:
 
-  `osp_sync_code: /Users/davidmcclure/Projects/osp-vagrant-code`
-  `osp_sync_data: /Users/davidmcclure/Projects/osp-vagrant-data`
+  ```
+  osp_sync_code: /Users/davidmcclure/Projects/osp-vagrant-code
+  osp_sync_data: /Users/davidmcclure/Projects/osp-vagrant-data
+  ```
 
   These directories don't need to exist - they'll be created automatically when the VM is started.
 
