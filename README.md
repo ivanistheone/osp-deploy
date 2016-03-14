@@ -18,7 +18,7 @@ This repository contains a set of Ansible playbooks that automate the process of
 
 1. For `osp_sync_code` and `osp_sync_data`, enter paths to directories on the local filesystem that will by synced with the Vagrant VM. Eg, on a Mac, something like:
 
-  ```
+  ```yaml
   osp_sync_code: /Users/davidmcclure/Projects/osp-vagrant-code
   osp_sync_data: /Users/davidmcclure/Projects/osp-vagrant-data
   ```
@@ -55,7 +55,7 @@ This repository contains a set of Ansible playbooks that automate the process of
 
   This will take 10-20 minutes. Once it's complete, hop into `psql`, and you should be able to interact with the data:
 
-  ```
+  ```bash
   > psql osp -U osp
 
   psql (9.5.1)
