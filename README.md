@@ -1,6 +1,8 @@
 # OSP Deployments
 
-#### Set up a development environment:
+This repository contains a set of Ansible playbooks that automate the process of deploying the code for the [Open Syllabus Project] (https://github.com/davidmcclure/open-syllabus-project) - both the metadata extraction rig and the public-facing web application. These playbooks can be used to configure a local development environment managed by Vagrant, or to deploy public-facing instances on EC2.
+
+#### Set up a local development environment
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html).
 
