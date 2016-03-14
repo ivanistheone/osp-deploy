@@ -53,7 +53,7 @@ This repository contains a set of Ansible playbooks that automate the process of
 
   `pg_restore /osp/osp-public.sql -d osp -U osp -v`
 
-  This will take 10-20 minutes. Once it's complete, hop into `psql`, and you should be able to interact with the data:
+  This will take 30-40 minutes. (Ignore any errors here - these are fixed when the foreign key constraints are rebuilt at the end.) Once it's complete, hop into `psql`, and you should be able to interact with the data:
 
   ```sql
   > psql osp -U osp
