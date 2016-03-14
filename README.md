@@ -70,7 +70,7 @@ This repository contains a set of Ansible playbooks that automate the process of
 
 #### Make a wheelhouse to speed up deployments
 
-The slowness of the pip install is a real drag, especially when it comes time to put up a big set of workers on EC2. To get around this, we can build a "wheelhouse" from the local Vagrant VM, which contains pre-built binaries for Ubuntu. Then, when deploying new servers (either on EC2 or locally), we can tell the provisioning scripts to use these binaries, instead of recompiling everything from scratch.
+The slowness of the pip install is a drag, especially when it comes time to put up a big set of workers on EC2. To get around this, we can build a "wheelhouse" from the local Vagrant VM, which contains pre-built binaries for Ubuntu. Then, when deploying new servers (either on EC2 or locally), we can tell the provisioning scripts to use these binaries, instead of recompiling everything from scratch.
 
 1. Log into the Vagrant box with:
 
