@@ -1,6 +1,15 @@
 ---
 
-# *** Vagrant ***
+
+# Postgres
+# --------
+
+# A database password.
+osp_db_pass: XXX
+
+
+# Vagrant
+# -------
 
 # Local path for synced OSP code.
 osp_sync_code: XXX
@@ -8,7 +17,9 @@ osp_sync_code: XXX
 # Local path for synced OSP data.
 osp_sync_data: XXX
 
-# *** EC2 ***
+
+# EC2
+# ---
 
 # VPC subnet to house the instances.
 ec2_subnet_id: subnet-XXX
@@ -29,5 +40,5 @@ osp_data_host: XXX
 aws_access_key_id: XXX
 aws_secret_access_key: XXX
 
-# Other local overrides:
-# ...
+
+# Other local overrides...
