@@ -51,7 +51,7 @@ This repository contains a set of Ansible playbooks that automate the process of
 
 1. At this point, if you're working with one of the public data dumps, just move the dump into the synced `osp_sync_data` directory, and then, from the Vagrant VM, use `pg_restore` to source in the data:
 
-  `pg_restore -d osp -U osp /osp/osp-public.sql -v`
+  `pg_restore /osp/osp-public.sql -d osp -U osp -v`
 
   This will take 10-20 minutes. Once it's complete, hop into `psql`, and you should be able to interact with the data:
 
