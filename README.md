@@ -6,6 +6,14 @@ This repository contains a set of Ansible playbooks that automate the process of
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html).
 
+1. Clone this repository, create a Python 2.x virtualenv, and install dependencies.
+
+  ```
+  virtualenv env
+  . env/bin/activate
+  pip install -r requirements.txt
+  ```
+
 1. Symlink `config/ansible.vagrant.cfg` -> `ansible.cfg`.
 
 1. Copy `/vars/local.changeme.yml` -> `vars/local.yml`.
