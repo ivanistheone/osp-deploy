@@ -1,8 +1,8 @@
 ---
 
-- include: copy_data.yml
-
 - include: install_package.yml
+
+- include: copy_data.yml
 
 - include: push_configs.yml
 
