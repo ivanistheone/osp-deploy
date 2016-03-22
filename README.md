@@ -6,10 +6,6 @@ This repository contains a set of Ansible playbooks that automate the process of
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html).
 
-1. Install the [Vai](https://github.com/MatthewMi11er/vai) plugin for Vagrant with:
-
-  `vagrant plugin install vai`
-
 1. Symlink `config/ansible.vagrant.cfg` -> `ansible.cfg`.
 
 1. Copy `/vars/local.changeme.yml` -> `vars/local.yml`.
@@ -24,6 +20,10 @@ This repository contains a set of Ansible playbooks that automate the process of
   ```
 
   These directories don't need to exist - they'll be created automatically when the VM is started.
+
+1. Install the [Vai](https://github.com/MatthewMi11er/vai) plugin for Vagrant with:
+
+  `vagrant plugin install vai`
 
 1. Start the Vagrant box with:
 
