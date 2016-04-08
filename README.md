@@ -14,6 +14,12 @@ This repository contains a set of Ansible playbooks that automate the process of
   pip install -r requirements.txt
   ```
 
+1. Check out the submodules:
+
+  ```
+  git submodule update --init
+  ```
+
 1. Symlink `config/ansible.vagrant.cfg` -> `ansible.cfg`.
 
 1. Copy `/vars/local.changeme.yml` -> `vars/local.yml`.
