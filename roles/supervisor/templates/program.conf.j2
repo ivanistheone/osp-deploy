@@ -9,3 +9,5 @@ autostart={{ item.autostart | default(false) }}
 numprocs={{ item.numprocs }}
 process_name=%(program_name)s_%(process_num)02d
 {% endif %}
+
+environment=LC_ALL="C.UTF-8",LANG="C.UTF-8"
