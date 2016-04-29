@@ -86,6 +86,21 @@ This repository contains a set of Ansible playbooks that automate the process of
   (1 row)
   ```
 
+1. When you're finished working, the VM can be paused with:
+
+  `vagrant halt`
+
+  This shuts down Ubuntu but preserves the configuration and data of the VM. To
+restart it later, just run the `up` command again:
+
+  `vagrant up`
+
+  Then, open the VirtualBox Manager application and find the listing for `osp-deploy_server_XXX`. Right click on it, and then click on "show" to launch a GUI for the VM. At a certain point during the boot process, Ubuntu will hang with:
+
+  `The disk drive for /osp is not ready yet or not present`
+
+  Hit `s` to skip the message, which will allow the system to boot. (This isn't actually a problem, just a quirky interaction between Vagrant's directory sync'ing and Ubuntu.)
+
 #### Make a wheelhouse to speed up deployments
 
 The slowness of the pip install is a drag, especially when it comes time to put up a big set of workers on EC2. To get around this, we can build a "wheelhouse" from the local Vagrant VM, which contains pre-built binaries for Ubuntu. Then, when deploying new servers (either on EC2 or locally), we can tell the provisioning scripts to use these binaries, instead of recompiling everything from scratch.
