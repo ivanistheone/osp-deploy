@@ -35,6 +35,14 @@ postgres:
       - institution_document
       - subfield_document
 
+sqlalchemy:
+  drivername: postgres
+  host: localhost
+  port: 5432
+  username: osp
+  password: {{ osp_db_pass }}
+  database: osp
+
 redis:
   host: localhost
   port: 6379
