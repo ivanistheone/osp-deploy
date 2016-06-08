@@ -1,5 +1,7 @@
 
 boto
 six
+MarkupSafe
+cryptography
 
 -e git+https://github.com/ansible/ansible.git@stable-2.0#egg=ansible
