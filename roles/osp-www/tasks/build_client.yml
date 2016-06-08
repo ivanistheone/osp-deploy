@@ -23,3 +23,4 @@
     src: /osp/tiles
     dest: '{{ osp_www_src }}/static/dist/tiles'
     state: link
+    force: yes
