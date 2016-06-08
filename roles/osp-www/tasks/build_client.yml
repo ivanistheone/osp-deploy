@@ -8,8 +8,8 @@
 # TODO: Why isn't ansible_ssh_user available?
 
 - name: Bower install
-  command: bower install
-  become_user: ubuntu
+  command: bower install --allow-root
+  #become_user: ubuntu
   args:
     chdir: '{{ osp_www_src }}'
 
