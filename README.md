@@ -22,7 +22,7 @@ This repository contains a set of Ansible playbooks that automate the process of
 
 1. Symlink `config/ansible.vagrant.cfg` -> `ansible.cfg`.
 
-1. Copy `/vars/local.changeme.yml` -> `vars/local.yml`.
+1. Copy `vars/local.changeme.yml` -> `vars/local.yml`.
 
 1. In `vars/local.yml`, set a value for the `osp_db_pass` variable, which will be used as the password for the main Postgres database.
 
